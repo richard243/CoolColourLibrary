@@ -160,7 +160,7 @@ public func ContrastColorOf(_ color: Color, isFlat: Bool = false) -> Color {
    return {
        let blackOrWhite = c.red + c.blue + c.green > 0.6
        if isFlat {
-           return blackOrWhite ? Color(red: 0, green: 0, blue: 15 / 255) : Color(red: 192 / 255, green: 2 / 255, blue: 95 / 255)
+           return blackOrWhite ? Color(red: 38.25, green: 38.25, blue: 38.25 / 255) : Color(red: 237.4 / 255, green: 242.2 / 255, blue: 242.3 / 255)
        } else {
            return blackOrWhite  ?  .white : .black
        }
