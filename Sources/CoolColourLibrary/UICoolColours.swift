@@ -154,7 +154,7 @@ public func ContrastColorOf(_ color: UIColor, isFlat: Bool = false) -> UIColor {
        if isFlat {
            return blackOrWhite ? UIColor(red: 38.25 / 255, green: 38.25 / 255, blue: 38.25 / 255, alpha: 1) : UIColor(red: 237.4 / 255, green: 242.2 / 255, blue: 242.3 / 255, alpha: 1)
        } else {
-           return blackOrWhite  ?  .white : .black
+           return blackOrWhite ? .white : .black
        }
        
    }()
