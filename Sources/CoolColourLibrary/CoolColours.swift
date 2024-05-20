@@ -137,15 +137,13 @@ extension Color {
     }
     
     
-   public func darken(percent: CGFloat) -> Color {
-        let p = percent / 100
+   public func darken(percent p: CGFloat) -> Color {
         let c = Color.getRGBA(colour: self)
         
-        return Color(red: c.red + p, green: c.green + p, blue: c.blue + p)
+        return Color(red: c.red - p, green: c.green - p, blue: c.blue - p)
     }
     
-    public func lighten(percent: CGFloat) -> Color {
-        let p = percent / 100
+    public func lighten(percent p: CGFloat) -> Color {
         let c = Color.getRGBA(colour: self)
         
         return Color(red: c.red + p, green: c.green + p, blue: c.blue + p)

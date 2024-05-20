@@ -129,16 +129,15 @@ extension UIColor {
     }
     
     
- public func darken(percent: CGFloat) -> UIColor {
-        let p = percent / 100
+ public func darken(percent p: CGFloat) -> UIColor {
+       
         let c = UIColor.getRGBA(colour: self)
         
-        return UIColor(red: c.red + p, green: c.green + p, blue: c.blue + p, alpha: c.alpha)
+        return UIColor(red: c.red - p, green: c.green - p, blue: c.blue - p, alpha: c.alpha)
     }
     
-  public func lighten(percent: CGFloat) -> UIColor {
-        let p = percent / 100
-        let c = UIColor.getRGBA(colour: self)
+  public func lighten(percent p: CGFloat) -> UIColor {
+       let c = UIColor.getRGBA(colour: self)
         
         return UIColor(red: c.red + p, green: c.green + p, blue: c.blue + p, alpha: c.alpha)
     }
