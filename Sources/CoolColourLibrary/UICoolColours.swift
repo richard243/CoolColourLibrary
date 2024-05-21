@@ -83,7 +83,7 @@ extension UIColor {
     }
 
     static public func FlatPumpkin(alpha: CGFloat = 1) -> UIColor {
-       return UIColor(red: 211 / 255, green: 84 / 255, blue: 0 / 255, alpha: alpha)
+       return UIColor(red: 211 / 255, green: 84 / 255, blue: 0, alpha: alpha)
     }
 
     static public func FlatAlizarin(alpha: CGFloat = 1) -> UIColor {

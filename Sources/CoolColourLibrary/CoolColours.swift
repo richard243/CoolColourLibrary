@@ -90,7 +90,7 @@ extension Color {
     }
 
     static func FlatPumpkin() -> Color {
-       return Color(red: 211 / 255, green: 84 / 255, blue: 0 / 255)
+       return Color(red: 211 / 255, green: 84 / 255, blue: 0)
     }
 
     static func FlatAlizarin() -> Color {
