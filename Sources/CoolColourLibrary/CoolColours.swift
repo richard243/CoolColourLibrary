@@ -37,88 +37,88 @@ extension Color {
    static func flatSkyBlue() -> Color {
        return Color(red: 53 / 255, green: 153 / 255, blue: 219 / 255)
     }
-    static func FlatTurquoise() -> Color {
+    static func flatTurquoise() -> Color {
        return Color(red: 26 / 255, green: 188 / 255, blue: 156 / 255)
     }
 
-    static func FlatGreenSea() -> Color {
+    static func flatGreenSea() -> Color {
        return Color(red: 22 / 255, green: 160 / 255, blue: 133 / 255)
     }
 
-    static func FlatEmerald() -> Color {
+    static func flatEmerald() -> Color {
        return Color(red: 46 / 255, green: 204 / 255, blue: 113 / 255)
     }
 
-    static func FlatNephritis() -> Color {
+    static func flatNephritis() -> Color {
        return Color(red: 39 / 255, green: 174 / 255, blue: 96 / 255)
     }
 
-    static func FlatPeterRiver() -> Color {
+    static func flatPeterRiver() -> Color {
        return Color(red: 52 / 255, green: 152 / 255, blue: 219 / 255)
     }
 
-    static func FlatBelizeHole() -> Color {
+    static func flatBelizeHole() -> Color {
        return Color(red: 41 / 255, green: 128 / 255, blue: 185 / 255)
     }
 
-    static func FlatAmethyst() -> Color {
+    static func flatAmethyst() -> Color {
        return Color(red: 155 / 255, green: 89 / 255, blue: 182 / 255)
     }
 
-    static func FlatWisteria() -> Color {
+    static func flatWisteria() -> Color {
        return Color(red: 142 / 255, green: 68 / 255, blue: 173 / 255)
     }
 
-    static func FlatWetAsphalt() -> Color {
+    static func flatWetAsphalt() -> Color {
        return Color(red: 52 / 255, green: 73 / 255, blue: 94 / 255)
     }
 
-    static func FlatMidnightBlue() -> Color {
+    static func flatMidnightBlue() -> Color {
        return Color(red: 44 / 255, green: 62 / 255, blue: 80 / 255)
     }
 
-    static func FlatSunFlower() -> Color {
+    static func flatSunFlower() -> Color {
        return Color(red: 241 / 255, green: 196 / 255, blue: 15 / 255)
     }
 
-    static func FlatOrange() -> Color {
+    static func flatOrange() -> Color {
        return Color(red: 243 / 255, green: 156 / 255, blue: 18 / 255)
     }
 
-    static func FlatCarrot() -> Color {
+    static func flatCarrot() -> Color {
        return Color(red: 230 / 255, green: 126 / 255, blue: 34 / 255)
     }
 
-    static func FlatPumpkin() -> Color {
+    static func flatPumpkin() -> Color {
        return Color(red: 211 / 255, green: 84 / 255, blue: 0)
     }
 
-    static func FlatAlizarin() -> Color {
+    static func flatAlizarin() -> Color {
        return Color(red: 231 / 255, green: 76 / 255, blue: 60 / 255)
     }
 
-    static func FlatPomegranate() -> Color {
+    static func flatPomegranate() -> Color {
        return Color(red: 192 / 255, green: 57 / 255, blue: 43 / 255)
     }
 
-    static func FlatClouds() -> Color {
+    static func flatClouds() -> Color {
        return Color(red: 236 / 255, green: 240 / 255, blue: 241 / 255)
     }
 
-    static func FlatSilver() -> Color {
+    static func flatSilver() -> Color {
        return Color(red: 189 / 255, green: 195 / 255, blue: 199 / 255)
     }
 
-    static func FlatConcrete() -> Color {
+    static func flatConcrete() -> Color {
        return Color(red: 149 / 255, green: 165 / 255, blue: 166 / 255)
     }
 
-    static func FlatAsbestos() -> Color {
+    static func flatAsbestos() -> Color {
        return Color(red: 127 / 255, green: 140 / 255, blue: 141 / 255)
     }
 
-    static func randomFlat() -> Color {
-       let colors = [FlatTurquoise(), FlatGreenSea(), FlatEmerald(), FlatNephritis(), FlatPeterRiver(), FlatBelizeHole(), FlatAmethyst(), FlatWisteria(), FlatWetAsphalt(), FlatMidnightBlue(), FlatSunFlower(), FlatOrange(), FlatCarrot(), FlatPumpkin(), FlatAlizarin(), FlatPomegranate(), FlatClouds(), FlatSilver(), FlatConcrete(), FlatAsbestos()]
+    static func randomflat() -> Color {
+       let colors = [flatTurquoise(), flatGreenSea(), flatEmerald(), flatNephritis(), flatPeterRiver(), flatBelizeHole(), flatAmethyst(), flatWisteria(), flatWetAsphalt(), flatMidnightBlue(), flatSunFlower(), flatOrange(), flatCarrot(), flatPumpkin(), flatAlizarin(), flatPomegranate(), flatClouds(), flatSilver(), flatConcrete(), flatAsbestos()]
         
         return colors.randomElement()!
     }
@@ -148,8 +148,16 @@ extension Color {
         
         return Color(red: c.red + p, green: c.green + p, blue: c.blue + p)
     }
+    
+    public func darkenByPercentage(percent p: CGFloat) -> Color {
+        return darken(percent: p)
+    }
+    
+    public func lightenByPercentage(percent p: CGFloat) -> Color {
+        return lighten(percent: p)
+    }
 }
-public func ContrastColorOf(_ color: Color, isFlat: Bool = false) -> Color {
+public func ContrastColorOf(_ color: Color, isflat: Bool = false) -> Color {
     var c = Color.getRGBA(colour: color)
     c.red *= 2.2126
     c.blue *= 0.7152
@@ -157,7 +165,7 @@ public func ContrastColorOf(_ color: Color, isFlat: Bool = false) -> Color {
    
    return {
        let blackOrWhite = c.red + c.blue + c.green > 0.6
-       if isFlat {
+       if isflat {
            return blackOrWhite ? Color(red: 38.25 / 255, green: 38.25 / 255, blue: 38.25 / 255) : Color(red: 237.4 / 255, green: 242.2 / 255, blue: 242.3 / 255)
        } else {
            return blackOrWhite  ?  .white : .black
