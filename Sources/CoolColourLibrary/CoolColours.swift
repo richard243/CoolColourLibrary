@@ -1,6 +1,6 @@
 //
-//  ColourFramework.swift
-//  AColourFramework
+//  CoolColours.swift
+//  CoolColourLibrary
 //
 //  Created by Richard Sabbage on 17/06/2023.
 //
